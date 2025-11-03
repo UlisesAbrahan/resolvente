@@ -5,190 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Ecuaciones Cuadráticas</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 40px;
-            max-width: 500px;
-            width: 100%;
-            animation: slideIn 0.5s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        h1 {
-            color: #667eea;
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 28px;
-        }
-
-        .subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 14px;
-        }
-
-        .formula {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 18px;
-            color: #333;
-            border-left: 4px solid #667eea;
-        }
-
-        .input-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #333;
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .btn {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
-        }
-
-        .btn:active {
-            transform: translateY(0);
-        }
-
-        .result {
-            margin-top: 30px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            display: none;
-            animation: fadeIn 0.5s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .result.show {
-            display: block;
-        }
-
-        .result h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .root {
-            background: white;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-        }
-
-        .root-label {
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 5px;
-        }
-
-        .root-value {
-            font-size: 18px;
-            color: #764ba2;
-            font-family: 'Courier New', monospace;
-        }
-
-        .error {
-            background: #fee;
-            border-left-color: #f44336;
-        }
-
-        .error-text {
-            color: #f44336;
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 25px;
-            }
-
-            h1 {
-                font-size: 24px;
-            }
-
-            .formula {
-                font-size: 16px;
-            }
-        }
+        /* (mantengo tus estilos tal cual) */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
+        .container { background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); padding: 40px; max-width: 500px; width: 100%; animation: slideIn 0.5s ease-out; }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        h1 { color: #667eea; text-align: center; margin-bottom: 10px; font-size: 28px; }
+        .subtitle { text-align: center; color: #666; margin-bottom: 30px; font-size: 14px; }
+        .formula { background: #f8f9fa; padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 30px; font-size: 18px; color: #333; border-left: 4px solid #667eea; }
+        .input-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; color: #333; font-weight: 600; font-size: 14px; }
+        input { width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 16px; transition: all 0.3s ease; }
+        input:focus { outline: none; border-color: #667eea; box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1); }
+        .btn { width: 100%; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin-top: 10px; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3); }
+        .result { margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px; display: none; animation: fadeIn 0.5s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        .result.show { display: block; }
+        .result h3 { color: #667eea; margin-bottom: 15px; text-align: center; }
+        .root { background: white; padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #667eea; }
+        .root-label { font-weight: 600; color: #333; margin-bottom: 5px; }
+        .root-value { font-size: 18px; color: #764ba2; font-family: 'Courier New', monospace; }
+        .error { background: #fee; border-left-color: #f44336; }
+        .error-text { color: #f44336; }
+        @media (max-width: 480px) { .container { padding: 25px; } h1 { font-size: 24px; } .formula { font-size: 16px; } }
     </style>
 </head>
 <body>
@@ -197,23 +37,23 @@
         <p class="subtitle">Resuelve ecuaciones de la forma ax² + bx + c = 0</p>
         
         <div class="formula">
-            x = (-b ± √(b² - 4ac)) / 2a
+            x = (-b ± √(b² - 4ac)) / (2·a)
         </div>
 
         <form id="quadraticForm">
             <div class="input-group">
                 <label for="a">Coeficiente a (x²):</label>
-                <input type="number" id="a" step="any" placeholder="Ej: 1" required>
+                <input type="text" id="a" placeholder="Ej: 1" required>
             </div>
 
             <div class="input-group">
                 <label for="b">Coeficiente b (x):</label>
-                <input type="number" id="b" step="any" placeholder="Ej: -3" required>
+                <input type="text" id="b" placeholder="Ej: -3" required>
             </div>
 
             <div class="input-group">
                 <label for="c">Coeficiente c (término independiente):</label>
-                <input type="number" id="c" step="any" placeholder="Ej: 2" required>
+                <input type="text" id="c" placeholder="Ej: 2" required>
             </div>
 
             <button type="submit" class="btn">Calcular Raíces</button>
@@ -223,13 +63,39 @@
     </div>
 
     <script>
+        // Helper: formatea números quitando ceros innecesarios y limitando decimales
+        function formatNumber(n) {
+            if (!Number.isFinite(n)) return String(n);
+            // si es entero lo devolvemos tal cual
+            if (Number.isInteger(n)) return String(n);
+            // redondeo a 6 decimales para presentación
+            return parseFloat(n.toFixed(6)).toString();
+        }
+
         document.getElementById('quadraticForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            const a = parseFloat(document.getElementById('a').value);
-            const b = parseFloat(document.getElementById('b').value);
-            const c = parseFloat(document.getElementById('c').value);
+
+            // Tomamos valores y reemplazamos coma decimal por punto para soportar "1,5"
+            const rawA = document.getElementById('a').value.trim().replace(',', '.');
+            const rawB = document.getElementById('b').value.trim().replace(',', '.');
+            const rawC = document.getElementById('c').value.trim().replace(',', '.');
+
+            const a = parseFloat(rawA);
+            const b = parseFloat(rawB);
+            const c = parseFloat(rawC);
             const resultDiv = document.getElementById('result');
+
+            // Validaciones
+            if (!Number.isFinite(a) || !Number.isFinite(b) || !Number.isFinite(c)) {
+                resultDiv.innerHTML = `
+                    <div class="root error">
+                        <div class="root-label error-text">Error</div>
+                        <div class="error-text">Por favor ingresa valores numéricos válidos para a, b y c. Usa punto (.) o coma (,) como separador decimal.</div>
+                    </div>
+                `;
+                resultDiv.classList.add('show');
+                return;
+            }
 
             if (a === 0) {
                 resultDiv.innerHTML = `
@@ -243,21 +109,24 @@
             }
 
             const discriminante = b * b - 4 * a * c;
+            const EPS = 1e-12; // tolerancia para considerar 0
 
             let html = '<h3>Resultados</h3>';
 
-            if (discriminante > 0) {
-                const x1 = (-b + Math.sqrt(discriminante)) / (2 * a);
-                const x2 = (-b - Math.sqrt(discriminante)) / (2 * a);
-                
+            if (discriminante > EPS) {
+                const sqrtD = Math.sqrt(discriminante);
+                const denom = 2 * a;
+                const x1 = (-b + sqrtD) / denom;
+                const x2 = (-b - sqrtD) / denom;
+
                 html += `
                     <div class="root">
                         <div class="root-label">Raíz x₁:</div>
-                        <div class="root-value">${x1}</div>
+                        <div class="root-value">${formatNumber(x1)}</div>
                     </div>
                     <div class="root">
                         <div class="root-label">Raíz x₂:</div>
-                        <div class="root-value">${x2}</div>
+                        <div class="root-value">${formatNumber(x2)}</div>
                     </div>
                     <div class="root">
                         <div style="color: #666; font-size: 14px; margin-top: 10px;">
@@ -265,13 +134,13 @@
                         </div>
                     </div>
                 `;
-            } else if (discriminante === 0) {
+            } else if (Math.abs(discriminante) <= EPS) {
+                // discriminante ~ 0
                 const x = -b / (2 * a);
-                
                 html += `
                     <div class="root">
                         <div class="root-label">Raíz doble x:</div>
-                        <div class="root-value">${x}</div>
+                        <div class="root-value">${formatNumber(x)}</div>
                     </div>
                     <div class="root">
                         <div style="color: #666; font-size: 14px; margin-top: 10px;">
@@ -279,18 +148,19 @@
                         </div>
                     </div>
                 `;
-            } else {
-                const parteReal = -b / (2 * a);
-                const parteImaginaria = Math.sqrt(-discriminante) / (2 * a);
-                
+            } else { // discriminante < 0
+                const denom = 2 * a;
+                const parteReal = -b / denom;
+                const parteImaginaria = Math.sqrt(-discriminante) / denom;
+                // mostrar con signo + / -
                 html += `
                     <div class="root">
                         <div class="root-label">Raíz x₁:</div>
-                        <div class="root-value">${parteReal} + ${parteImaginaria}i</div>
+                        <div class="root-value">${formatNumber(parteReal)} + ${formatNumber(parteImaginaria)}i</div>
                     </div>
                     <div class="root">
                         <div class="root-label">Raíz x₂:</div>
-                        <div class="root-value">${parteReal} - ${parteImaginaria}i</div>
+                        <div class="root-value">${formatNumber(parteReal)} - ${formatNumber(parteImaginaria)}i</div>
                     </div>
                     <div class="root">
                         <div style="color: #666; font-size: 14px; margin-top: 10px;">
